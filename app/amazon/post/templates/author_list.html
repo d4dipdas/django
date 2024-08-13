@@ -1,0 +1,23 @@
+<!-- templates/author_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authors</title>
+</head>
+<body>
+    <h1>Authors</h1>
+    <a href="/add-author">Add New Author</a>
+    <ul>
+        {% for author in authors %}
+            <li>
+                {{ author.name }} - {{ author.birthdate }}
+                <a href="{% url 'author_update' author.pk %}">Edit</a>
+                <a href="{% url 'author_delete' author.pk %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>No authors found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

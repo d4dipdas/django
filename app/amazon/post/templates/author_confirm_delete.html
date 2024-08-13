@@ -1,0 +1,17 @@
+<!-- templates/author_confirm_delete.html and templates/book_confirm_delete.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Delete</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete "{{ object }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm</button>
+        <a href="{% url 'author_list' %}">Cancel</a>
+        <a href="{% url 'book_list' %}">Cancel</a>
+    </form>
+</body>
+</html>

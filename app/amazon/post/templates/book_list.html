@@ -1,0 +1,23 @@
+<!-- templates/book_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books</title>
+</head>
+<body>
+    <h1>Books</h1>
+    <a href="/add-book">Add New Book</a>
+    <ul>
+        {% for book in books %}
+            <li>
+                {{ book.title }} - {{ book.author.name }} - {{ book.publication_date }}
+                <a href="{% url 'book_update' book.pk %}">Edit</a>
+                <a href="{% url 'book_delete' book.pk %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>No books found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

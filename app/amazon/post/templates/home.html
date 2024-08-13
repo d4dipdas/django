@@ -1,0 +1,20 @@
+<!-- templates/home.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Welcome to the Library Management System</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'author_list' %}">View All Authors</a></li>
+            <li><a href="{% url 'book_list' %}">View All Books</a></li>
+            <li><a href="/add-author">Add New Author</a></li>
+            <li><a href="/add-book">Add New Book</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

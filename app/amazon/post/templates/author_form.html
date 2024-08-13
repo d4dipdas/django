@@ -1,0 +1,18 @@
+<!-- templates/author_form.html and templates/book_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ form.instance.pk|default:"Add" }} Author/Book</title>
+</head>
+<body>
+    <h1>{{ form.instance.pk|default:"Add" }} Author/Book</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'author_list' %}">Back to Authors</a>
+    <a href="{% url 'book_list' %}">Back to Books</a>
+</body>
+</html>
